@@ -87,16 +87,6 @@ Visit → http://localhost:3000
 
 ---
 
-## 📅 Build Log
-
-| Day | What we built |
-|-----|--------------|
-| ✅ Day 1 | Project setup, Docker, React UI shell, Node backend skeleton |
-| 🔜 Day 2 | AI question generation, interview flow |
-| 🔜 Day 3 | Speech-to-Text, answer recording, AI analysis |
-| 🔜 Day 4 | Polish, deploy to Render |
-
----
 
 ## 🛠️ Tech Stack
 
