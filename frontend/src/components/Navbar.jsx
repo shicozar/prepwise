@@ -1,8 +1,16 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useAuth } from '../context/AuthContext'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
   const { pathname } = useLocation()
+  const { user, logout } = useAuth()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    logout()
+    navigate('/')
+  }
 
   return (
     <nav className={styles.nav}>
@@ -17,9 +25,16 @@ export default function Navbar() {
           <Link to="/interview" className={`${styles.link} ${pathname === '/interview' ? styles.active : ''}`}>Practice</Link>
         </div>
 
-        <Link to="/interview" className={styles.cta}>
-          Start Session
-        </Link>
+        <div className={styles.right}>
+          {user ? (
+            <>
+              <span className={styles.userName}>👋 {user.name.split(' ')[0]}</span>
+              <button className={styles.logoutBtn} onClick={handleLogout}>Sign Out</button>
+            </>
+          ) : (
+            <Link to="/auth" className={styles.cta}>Sign In</Link>
+          )}
+        </div>
       </div>
     </nav>
   )
