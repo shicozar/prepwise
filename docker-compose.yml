@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
@@ -33,7 +33,7 @@ services:
       CLIENT_URL: http://localhost:3000
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
       PG_HOST: postgres
-      PG_PORT: 5432
+      PG_PORT: 5433
       PG_DB: prepwise
       PG_USER: postgres
       PG_PASSWORD: postgres
