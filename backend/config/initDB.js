@@ -1,6 +1,10 @@
-import pool from '../config/postgres.js'
+import pool from './postgres.js'
 
 export async function initDB() {
+  if (!pool) {
+    console.log('⚠️  Skipping DB init — PostgreSQL not configured')
+    return
+  }
   try {
     await pool.query(`
       CREATE TABLE IF NOT EXISTS users (
