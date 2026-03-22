@@ -3,7 +3,7 @@
 
 > Practice interviews with real questions, speak your answers, and get AI-powered coaching.
 
-🌐 **Live Demo:** [prepwise on Render] ← add your URL after deploying
+🌐 **Live Demo:** [[prepwise on Render](https://prepwise-frontend.onrender.com)] 
 
 ---
 
